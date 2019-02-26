@@ -29,7 +29,9 @@ class PostsController < ApplicationController
     # render json: PostSerializer.serialize(post)
     # render json: post.to_json
     # render json: post.to_json(include: :author)
+    render json: post.to_json(only: [:title, :description, :id],
     
+    include: [ author: { only: [:name]}])
   end
 
   private
