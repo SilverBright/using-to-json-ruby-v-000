@@ -28,7 +28,8 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     # render json: PostSerializer.serialize(post)
     # render json: post.to_json
-    render json: post.to_json(include: :author)
+    # render json: post.to_json(include: :author)
+    
   end
 
   private
